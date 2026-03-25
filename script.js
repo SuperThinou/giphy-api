@@ -5,24 +5,19 @@ const gif = document.getElementById("gif");
 const randomGifBtn = document.getElementById("randomGifBtn");
 const modeSelector = document.getElementById("mode");
 
-function loadGif() {
+async function loadGif() {
   addLoadingStyle();
   const url = getApiUrl();
-  console.log(url);
 
-  fetch(url)
-    .then(function (response) {
-      return response.json();
-    })
-    .then(function (response) {
-      gif.src = response.data.images.original.url;
-    })
-    .catch(function (error) {
-      console.error("Erreur :", error);
-    })
-    .finally(function () {
-      removeLoadingStyle();
-    });
+  try {
+    const response = await fetch(url);
+    const data = await response.json();
+    gif.src = data.data.images.original.url;
+  } catch (error) {
+    console.error("Erreur :", error);
+  } finally {
+    removeLoadingStyle();
+  }
 }
 
 function getApiUrl() {
