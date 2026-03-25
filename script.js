@@ -1,6 +1,6 @@
 const searchBtn = document.getElementById("searchBtn");
 const searchBar = document.getElementById("searchBar");
-const loader = document.querySelector(".loader");
+const loader = document.getElementById(".loader");
 const gif = document.getElementById("gif");
 const randomGifBtn = document.getElementById("randomGifBtn");
 const modeSelector = document.getElementById("mode");
