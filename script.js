@@ -55,6 +55,8 @@ function removeLoadingStyle() {
 loadGif();
 
 searchBtn.addEventListener("click", () => {
+  if (searchBar.value.trim() === "") return;
+  
   loadGif();
 });
 
