@@ -35,7 +35,7 @@ function getApiUrl() {
     return `https://api.giphy.com/v1/gifs/random?api_key=n5AUEykERIPKKOwuk3CDQUaRHE0vzvfY`;
   }
 
-  return `https://api.giphy.com/v1/gifs/translate?api_key=n5AUEykERIPKKOwuk3CDQUaRHE0vzvfY&s=${query}`;
+  return `https://api.giphy.com/v1/gifs/random?api_key=n5AUEykERIPKKOwuk3CDQUaRHE0vzvfY&tag=${query}`;
 }
 
 function addLoadingStyle() {
