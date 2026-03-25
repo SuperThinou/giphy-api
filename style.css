@@ -113,13 +113,13 @@ h1 {
     cursor: default;
 }
 
-.img-container {
+.gif-container {
     position: relative;
     max-height:60vh;
     margin: 20px;
 }
 
-img {
+.gif {
     height: 100%;
     border-radius: 20px;
 }

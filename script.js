@@ -1,5 +1,5 @@
 const loader = document.querySelector(".loader");
-const img = document.querySelector("img");
+const gif = document.getElementById("gif");
 const randomGifBtn = document.getElementById("randomGifBtn");
 const modeSelector = document.getElementById("mode");
 
@@ -13,7 +13,7 @@ function loadGif() {
       return response.json();
     })
     .then(function (response) {
-      img.src = response.data.images.original.url;
+      gif.src = response.data.images.original.url;
     })
     .catch(function (error) {
       console.error("Erreur :", error);
@@ -37,14 +37,14 @@ function addLoadingStyle() {
   randomGifBtn.disabled = true;
   randomGifBtn.classList.add("btn-disabled");
   loader.classList.remove("hidden");
-  img.style.opacity = "0.3";
+  gif.style.opacity = "0.3";
 }
 
 function removeLoadingStyle() {
   randomGifBtn.disabled = false;
   randomGifBtn.classList.remove("btn-disabled");
   loader.classList.add("hidden");
-  img.style.opacity = "1";
+  gif.style.opacity = "1";
 }
 
 loadGif();
@@ -52,6 +52,6 @@ loadGif();
 randomGifBtn.addEventListener("click", loadGif);
 
 modeSelector.addEventListener("change", () => {
-  img.src = "";
+  gif.src = "";
   loadGif();
 });
