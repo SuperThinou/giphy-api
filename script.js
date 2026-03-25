@@ -66,7 +66,7 @@ searchBar.addEventListener("keydown", (e) => {
     if (searchBar.value.trim() === "") return;
 
     loadGif();
-    searchBar.value = ""; 
+    searchBar.value = "";
   }
 });
 
@@ -75,4 +75,10 @@ randomGifBtn.addEventListener("click", loadGif);
 modeSelector.addEventListener("change", () => {
   gif.src = "";
   loadGif();
+});
+
+gif.addEventListener("click", () => {
+  if (gif.requestFullscreen) {
+    gif.requestFullscreen();
+  }
 });
