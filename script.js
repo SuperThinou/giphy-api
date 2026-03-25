@@ -61,6 +61,8 @@ searchBtn.addEventListener("click", () => {
 });
 
 searchBar.addEventListener("keydown", (e) => {
+  if (searchBar.value.trim() === "") return;
+
   if (e.key === "Enter") {
     loadGif();
   }
